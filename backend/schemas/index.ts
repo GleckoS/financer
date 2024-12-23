@@ -1,36 +1,43 @@
-export type Module = Record<string, any>;
+import calculatorsListing_component from "./components/calculators-listing_component";
+import cta_component from "./components/cta_component";
+import flexContent_component from "./components/flex-content_component";
+import footer_component from "./components/footer_component";
+import imageCta_component from "./components/image-cta_component";
+import loanCompare_component from "./components/loan-compare_component";
+import logosLine_component from "./components/logos-line_component";
+import ourPartners_component from "./components/our-partners_component";
+import ourTeam_component from "./components/our-team_component";
+import seo_component from "./components/seo_component";
+import videoPopup_component from "./components/video-popup_component";
 
-// Util for module loading
-const loadModules = async (
-  modules: Record<string, () => Promise<Module>>
-): Promise<Module[]> => {
-  const loadedModules = await Promise.all(
-    Object.entries(modules).map(async ([, importFn]) => {
-      const module = await importFn();
-      return module.default || module;
-    })
-  );
-  return loadedModules;
-};
+const components = [
+  calculatorsListing_component,
+  cta_component,
+  flexContent_component,
+  footer_component,
+  imageCta_component,
+  loanCompare_component,
+  logosLine_component,
+  ourPartners_component,
+  ourTeam_component,
+  seo_component,
+  videoPopup_component
+]
 
-// Import modules from static paths
+import home_page from "./single-types/home_page";
+import global from "./single-types/global";
 
-const singleTypesModules: Record<string, () => Promise<Module>> =
-  // @ts-expect-error Vite in site badly configured and don't see glob type
-  import.meta.glob("./single-types/*.ts");
-const collectionTypesModules: Record<string, () => Promise<Module>> =
-  // @ts-expect-error Vite in site badly configured and don't see glob type
-  import.meta.glob("./collection-types/*.ts");
-const componentsModules: Record<string, () => Promise<Module>> =
-  // @ts-expect-error Vite in site badly configured and don't see glob type
-  import.meta.glob("./components/*.ts");
+const singleTypes = [
+  global,
+  home_page
+]
 
-// Load modules
-const singleTypes: Module[] = await loadModules(singleTypesModules);
-const collectionTypes: Module[] = await loadModules(collectionTypesModules);
-const components: Module[] = await loadModules(componentsModules);
+import loan_collection from "./collection-types/loan_collection";
+
+const collectionTypes  = [
+  loan_collection
+]
 
 const schemaTypes = [...singleTypes, ...collectionTypes, ...components];
 
-// Export modules
 export { singleTypes, collectionTypes, components, schemaTypes };

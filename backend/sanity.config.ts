@@ -2,13 +2,12 @@ import { defineConfig, SchemaTypeDefinition } from "sanity";
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { colorInput } from "@sanity/color-input";
+import { documentInternationalization } from "@sanity/document-internationalization";
 import { markdownSchema } from "sanity-plugin-markdown";
 import { media } from "sanity-plugin-media";
-import { schemaTypes, singleTypes } from "./schemas";
+import { schemaTypes } from "./schemas";
 import { deskStructure } from "./desc.structure";
 import { CustomMarkdownInput } from "./components/markdown";
-
-const singletonTypes = new Set(singleTypes.map((type) => type.name));
 
 const config = defineConfig({
   name: "default",
@@ -25,12 +24,17 @@ const config = defineConfig({
     markdownSchema({ input: CustomMarkdownInput }),
     media(),
     colorInput(),
+    documentInternationalization({
+      supportedLanguages: [
+        { id: "en", title: "English" },
+        { id: "es", title: "Spanish" },
+      ],
+      schemaTypes: ["home_page"],
+    }),
   ],
 
   schema: {
     types: schemaTypes as SchemaTypeDefinition[],
-    templates: (templates) =>
-      templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
   },
 });
 

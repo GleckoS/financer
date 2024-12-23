@@ -9,27 +9,30 @@
     "start": "sanity start",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "deploy-graphql": "sanity graphql deploy",
+    "generate-schema": "sanity schema extract --enforce-required-fields",
+    "generate-types": "sanity typegen generate"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
     "@sanity/color-input": "^4.0.3",
-    "@sanity/vision": "^3.68.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sanity": "^3.68.1",
+    "@sanity/document-internationalization": "3.2.0",
+    "@sanity/vision": "^3.68.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sanity": "^3.68.3",
     "sanity-plugin-markdown": "^5.0.0",
     "sanity-plugin-media": "^2.3.2",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^5.0.1",
-    "@types/react": "^18.0.25",
-    "eslint": "^9.9.0",
+    "@types/react": "^18.3.18",
+    "eslint": "^9.17.0",
     "groq": "^3.68.3",
-    "prettier": "^3.0.2",
-    "typescript": "^5.1.6"
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
   }
 }
