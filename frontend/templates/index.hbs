@@ -1,8 +1,7 @@
-import {{name}} from './{{name}}';
-export default {{name}};
-export type { {{name}}Types } from './{{name}}.types';
+import {{pascalCase name}} from './{{name}}';
+export default {{pascalCase name}};
 
-export const {{name}}_Query = `
+export const {{pascalCase name}}_Query = `
   _type == "{{name}}" => {
 
   },

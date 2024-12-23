@@ -1,17 +1,13 @@
-// import sanityFetch from '@/utils/sanity.fetch';
+import sanityFetch from "@/utils/sanity.fetch";
 // import { QueryMetadata } from '@/global/Seo/query-metadata';
-// import Breadcrumbs from '@/components/_global/Breadcrumbs';
-// import Components, { Components_Query } from '@/components/Components';
-// import type { PageQueryProps } from '@/global/types';
-
+import type { Home_page } from "@sanity-types";
 // const page = { name: 'Homepage', path: '' };
 
 const IndexPage = async () => {
-  // const { content } = await query();
+  const { content } = await query();
 
   return (
     <>
-      {/* <Breadcrumbs /> */}
       {/* <Components data={content} /> */}
     </>
   );
@@ -23,14 +19,14 @@ export default IndexPage;
 //   return await QueryMetadata('homepage', page.path);
 // }
 
-// const query = async (): Promise<PageQueryProps> => {
-//   const data = await sanityFetch<PageQueryProps>({
-//     query: /* groq */ `
-//       *[_type == "homepage"][0] {
-//         ${Components_Query}
-//       }
-//     `,
-//     tags: ['homepage'],
-//   });
-//   return data;
-// };
+const query = async (): Promise<Home_page> => {
+  const data = await sanityFetch<Home_page>({
+    query: /* groq */ `
+      *[_type == "homepage"][0] {
+        
+      }
+    `,
+    tags: ["homepage"],
+  });
+  return data;
+};

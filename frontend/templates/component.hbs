@@ -1,9 +1,9 @@
 import styles from './{{name}}.module.scss';
-import type { {{name}}Types } from './{{name}}.types';
+import type { {{pascalCase name}}_component } from "@sanity-types";
 
-const {{pascalCase name}} = ({  }: {{name}}Types) => {
+const {{pascalCase name}} = ({  }: {{pascalCase name}}_component) => {
   return (
-    <section className={styles['{{pascalCase name}}']}>
+    <section className={styles['{{name}}']}>
 
     </section>
   );
