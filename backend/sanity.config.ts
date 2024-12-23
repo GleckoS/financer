@@ -29,7 +29,7 @@ const config = defineConfig({
         { id: "en", title: "English" },
         { id: "es", title: "Spanish" },
       ],
-      schemaTypes: ["home_page"],
+      schemaTypes: ["home_page", "global"],
     }),
   ],
 

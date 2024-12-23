@@ -32,10 +32,9 @@ const query = async (): Promise<Home_page> => {
     params: {
       language: "es"
     },
-    tags: ["homepage"],
+    tags: ["home_page"],
   });
 
-  console.log(data);
   if (!data) {
     throw new Error("Failed data fetching");
   }

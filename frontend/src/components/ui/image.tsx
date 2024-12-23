@@ -1,12 +1,15 @@
 import Image from "next/image";
-import type { ImgType } from "@/global/types";
+import { SanityImageAsset } from "@sanity-types";
 
 const defaultPlaceholder =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP89eVDPQAJLQNfkP/zaAAAAABJRU5ErkJggg==";
 
 type ImgProps = (
   | {
-      data: ImgType;
+      data: {
+        // TODO: fix types
+        asset?: SanityImageAsset;
+      };
       src?: never;
       width?: number;
       height?: number;
@@ -34,12 +37,12 @@ const Img = ({
   priority,
   ...props
 }: ImgProps) => {
-  const placeholder = data?.asset.metadata?.lqip || defaultPlaceholder;
+  const placeholder = data?.asset?.metadata?.lqip || defaultPlaceholder;
   if (data) {
-    src = data.asset.url;
-    width = width || data.asset.metadata.dimensions.width;
-    height = width || data.asset.metadata.dimensions.height;
-    alt = alt || data.asset.altText;
+    src = data.asset!.url;
+    width = width || data.asset!.metadata!.dimensions!.width;
+    height = width || data.asset!.metadata!.dimensions!.height;
+    alt = alt || data.asset!.altText;
   }
 
   return (

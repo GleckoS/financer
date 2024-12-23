@@ -2,6 +2,7 @@ import "@/global/global.scss";
 import localFont from "next/font/local";
 import { LOCALE, THEME_COLOR } from "@/global/constants";
 import type { Viewport } from "next";
+import Footer from "@/components/ui/footer";
 
 const IBMPlexSans = localFont({
   src: [
@@ -31,7 +32,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang={LOCALE}>
-      <body className={IBMPlexSans.className}>{children}</body>
+      <body className={IBMPlexSans.className}>
+        <header />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
