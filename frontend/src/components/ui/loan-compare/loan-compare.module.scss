@@ -1,3 +1,37 @@
 .loan-compare {
-  
+  color: #fff;
+  background: linear-gradient(96deg, #137dad 0%, #0c4c69 100%);
+  padding: 64px 0;
+
+  h2 {
+    margin-bottom: 85px;
+  }
+
+  .flex {
+    display: grid;
+    grid-template-columns: 498fr 445fr;
+    align-items: center;
+    gap: 85px;
+
+    ul {
+      display: grid;
+      gap: 24px;
+      list-style: none;
+
+      li {
+        display: flex;
+        gap: 16px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .compare-block {
+    padding: 24px;
+    border-radius: 30px;
+    background: linear-gradient(151deg, #daf1fb 0%, #f6fbfe 100%);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
+    color: #135E80;
+  }
 }

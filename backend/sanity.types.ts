@@ -190,16 +190,16 @@ export type Home_page = {
   _updatedAt: string;
   _rev: string;
   language?: string;
-  loan_compare?: LoanCompare_component;
-  logos_line?: LogosLine_component;
-  image_cta_first?: ImageCta_component;
-  image_cta_second?: ImageCta_component;
-  video_popup?: VideoPopup_component;
-  calculators_listing?: CalculatorsListing_component;
-  flex_content?: FlexContent_component;
-  our_team?: OurTeam_component;
-  our_partners?: OurPartners_component;
-  seo?: Seo_component;
+  loan_compare: LoanCompare_component;
+  logos_line: LogosLine_component;
+  image_cta_first: ImageCta_component;
+  image_cta_second: ImageCta_component;
+  video_popup: VideoPopup_component;
+  calculators_listing: CalculatorsListing_component;
+  flex_content: FlexContent_component;
+  our_team: OurTeam_component;
+  our_partners: OurPartners_component;
+  seo: Seo_component;
 };
 
 export type Seo_component = {

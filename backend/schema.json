@@ -1045,7 +1045,7 @@
           "type": "inline",
           "name": "loan-compare_component"
         },
-        "optional": true
+        "optional": false
       },
       "logos_line": {
         "type": "objectAttribute",
@@ -1053,7 +1053,7 @@
           "type": "inline",
           "name": "logos-line_component"
         },
-        "optional": true
+        "optional": false
       },
       "image_cta_first": {
         "type": "objectAttribute",
@@ -1061,7 +1061,7 @@
           "type": "inline",
           "name": "image-cta_component"
         },
-        "optional": true
+        "optional": false
       },
       "image_cta_second": {
         "type": "objectAttribute",
@@ -1069,7 +1069,7 @@
           "type": "inline",
           "name": "image-cta_component"
         },
-        "optional": true
+        "optional": false
       },
       "video_popup": {
         "type": "objectAttribute",
@@ -1077,7 +1077,7 @@
           "type": "inline",
           "name": "video-popup_component"
         },
-        "optional": true
+        "optional": false
       },
       "calculators_listing": {
         "type": "objectAttribute",
@@ -1085,7 +1085,7 @@
           "type": "inline",
           "name": "calculators-listing_component"
         },
-        "optional": true
+        "optional": false
       },
       "flex_content": {
         "type": "objectAttribute",
@@ -1093,7 +1093,7 @@
           "type": "inline",
           "name": "flex-content_component"
         },
-        "optional": true
+        "optional": false
       },
       "our_team": {
         "type": "objectAttribute",
@@ -1101,7 +1101,7 @@
           "type": "inline",
           "name": "our-team_component"
         },
-        "optional": true
+        "optional": false
       },
       "our_partners": {
         "type": "objectAttribute",
@@ -1109,7 +1109,7 @@
           "type": "inline",
           "name": "our-partners_component"
         },
-        "optional": true
+        "optional": false
       },
       "seo": {
         "type": "objectAttribute",
@@ -1117,7 +1117,7 @@
           "type": "inline",
           "name": "seo_component"
         },
-        "optional": true
+        "optional": false
       }
     }
   },
