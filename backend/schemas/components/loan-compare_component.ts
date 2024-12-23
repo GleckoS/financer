@@ -8,7 +8,7 @@ export default defineType({
     defineField({
       name: "title",
       type: "markdown",
-      title: "Section title",
+      title: "Title",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -17,7 +17,8 @@ export default defineType({
       title: "Benefits list",
       of: [
         defineArrayMember({
-          name: "Benefit",
+          name: "benefit",
+          title: "Benefit",
           type: "markdown",
           validation: (Rule) => Rule.required(),
         }),
